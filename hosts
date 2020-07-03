@@ -14,3 +14,5 @@ all:
       hosts: 
         cdn-australiaeast-01:
           ansible_host: cdn-galenguyer-01.australiaeast.cloudapp.azure.com
+        cdn-japaneast-01:
+          ansible_host: cdn-galenguyer-01.japaneast.cloudapp.azure.com
