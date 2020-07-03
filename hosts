@@ -6,6 +6,8 @@ all:
           ansible_host: cdn-galenguyer-01.westus2.cloudapp.azure.com
         cdn-eastus-01:
           ansible_host: cdn-galenguyer-01.eastus.cloudapp.azure.com
+        cdn-brazilsouth-01:
+          ansible_host: cdn-galenguyer-01.brazilsouth.cloudapp.azure.com
     europe:
       hosts: 
         cdn-uksouth-01:
@@ -16,3 +18,7 @@ all:
           ansible_host: cdn-galenguyer-01.australiaeast.cloudapp.azure.com
         cdn-japaneast-01:
           ansible_host: cdn-galenguyer-01.japaneast.cloudapp.azure.com
+    middleeast:
+      hosts:
+        cdn-uaenorth-01:
+          ansible_host: cdn-galenguyer-01.uaenorth.cloudapp.azure.com
