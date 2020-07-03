@@ -1,9 +1,16 @@
-[us]
-cdn-westus2-01
-cdn-eastus-01
-
-[europe]
-cdn-uksouth-01
-
-[asiapacific]
-cdn-australiaeast-01
+all:
+  children:
+    us:
+      hosts: 
+        cdn-westus2-01:
+          ansible_host: cdn-galenguyer-01.westus2.cloudapp.azure.com
+        cdn-eastus-01:
+          ansible_host: cdn-galenguyer-01.eastus.cloudapp.azure.com
+    europe:
+      hosts: 
+        cdn-uksouth-01:
+          ansible_host: cdn-galenguyer-01.uksouth.cloudapp.azure.com
+    asiapacific:
+      hosts: 
+        cdn-australiaeast-01:
+          ansible_host: cdn-galenguyer-01.australiaeast.cloudapp.azure.com
