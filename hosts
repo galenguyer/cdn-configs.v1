@@ -12,3 +12,7 @@ all:
       hosts: 
         cdn-uksouth-01:
           ansible_host: cdn-galenguyer-01.uksouth.cloudapp.azure.com
+    asiapacific:
+      hosts:
+        cdn-southeastasia-01:
+          ansible_host: cdn-galenguyer-01.southeastasia.cloudapp.azure.com
