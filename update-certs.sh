@@ -18,6 +18,7 @@ sudo certbot-auto certonly \
 # publish cert to all clients
 for HOST in `cat hostnames`
 do
+	echo running on $HOST
 	ssh "$HOST" mkdir -p /etc/letsencrypt/
 	rsync -avz --delete -e ssh /etc/letsencrypt/ "$HOST":/etc/letsencrypt/
 	ssh "$HOST" chown root:root /etc/letsencrypt/ -R
