@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+source ./.utils.sh
+
 for HOST in `cat hostnames`
 do
-    echo running on $HOST
+    info "running on $HOST"
     ssh -t $HOST bash -c "'
 	apt-get update
 	apt-get install gnupg2 rsync -y --no-install-recommends
