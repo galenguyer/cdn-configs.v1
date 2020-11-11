@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  myipis:
+    restart: always
+    image: docker.galenguyer.com/chef/myipis
+    ports:
+      - "8080:8080"

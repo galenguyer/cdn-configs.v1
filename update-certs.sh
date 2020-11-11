@@ -20,12 +20,22 @@ sudo certbot-auto certonly \
 	-d 'galenguyer.com' \
 	-d '*.galenguyer.com'
 
+sudo certbot-auto certonly \
+	--server https://acme-v02.api.letsencrypt.org/directory \
+	--manual \
+	--preferred-challenges dns \
+	-m certbot@galenguyer.com \
+	--rsa-key-size 4096 \
+	--agree-tos \
+	-d 'nyaa.gay' \
+	-d '*.nyaa.gay'
+
 # publish cert to all clients
 for HOST in `cat hostnames`
 do
 	info "running on $HOST"
-	ssh "$HOST" mkdir -p /etc/letsencrypt/
+	ssh "$HOST" 'mkdir -p /etc/letsencrypt/'
 	rsync -avz --delete -e ssh /etc/letsencrypt/ "$HOST":/etc/letsencrypt/
-	ssh "$HOST" chown root:root /etc/letsencrypt/ -R
+	ssh "$HOST" 'chown root:root /etc/letsencrypt/ -R'
 	ok "done on $HOST"
 done
